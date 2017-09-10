@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block head_title %} Restaurants || {{ block.super }} {% endblock head_title %}
+
+{%  block content %}
+    <h1>
+        {{ restaurantlocation.title }}
+        <small>
+            {{ restaurantlocation.category }}
+{#            <a href="{{ object.get_absolute_url_update }}"> | Edit</a>#}
+        </small>
+    </h1>
+    <p>{{ object.location }}</p>
+    <p>{{ restaurantlocation.timestamp }}, {{ restaurantlocation.updated|timesince }} ago</p>
+{% endblock content %}
+
