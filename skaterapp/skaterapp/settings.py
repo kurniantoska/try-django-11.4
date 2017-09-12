@@ -26,7 +26,7 @@ SECRET_KEY = 'd&j$@9i#_=f=spzta@=efg&y@5in4f1zue_3gzk+he)1j)d-uh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pylab2-skaterska.c9users.io']
 LOGIN_URL = reverse_lazy('login')
 
 # Application definition
