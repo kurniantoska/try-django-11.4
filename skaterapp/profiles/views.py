@@ -17,14 +17,13 @@ class ProfileFollowToggle(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         
         user_to_toggle = request.POST.get("username")
-        print("{} - variabel tootle".format(user_to_toggle))
         profile_ = Profile.objects.get(user__username__iexact=user_to_toggle)
         user = request.user
         if user in profile_.followers.all():
             profile_.followers.remove(user)
         else:
             profile_.followers.add(user)
-        return redirect('/u/skater/')
+        return redirect('/u/{profile_.user.username}/'.format())
 
 
 class ProfileDetailView(DetailView):
