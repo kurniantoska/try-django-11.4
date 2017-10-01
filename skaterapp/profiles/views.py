@@ -23,7 +23,7 @@ class ProfileFollowToggle(LoginRequiredMixin, View):
             profile_.followers.remove(user)
         else:
             profile_.followers.add(user)
-        return redirect('/u/{profile_.user.username}/'.format())
+        return redirect('/u/{}/'.format(profile_.user.username))
 
 
 class ProfileDetailView(DetailView):
